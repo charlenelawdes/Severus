@@ -2356,7 +2356,7 @@ def reciprocal_inv(clusters):
             for j in range(strt,end+1):
                 if not j in black_list and neg_ls[j][4][0].bp_2.position + MINSIZE >= pos[4][0].bp_2.position:
                     len1, len2 = (pos[4][0].bp_2.position - neg_ls[j][4][0].bp_1.position), (neg_ls[j][4][0].bp_2.position - pos[4][0].bp_1.position)
-                    if len1/len2 > LEN_DIFF_RAT and abs(len2 - len1) < LEN_DIFF_THR:
+                    if len2 != 0 and len1/len2 > LEN_DIFF_RAT and abs(len2 - len1) < LEN_DIFF_THR:
                         for db in pos[4]+neg_ls[j][4]:
                             db.sv_type = (pos[4][0].bp_1.position, neg_ls[j][4][0].bp_1.position, pos[4][0].bp_2.position, neg_ls[j][4][0].bp_2.position)
                             db.vcf_sv_type = 'INV'
