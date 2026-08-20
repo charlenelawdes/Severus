@@ -2456,7 +2456,7 @@ def complex_inv(double_breaks, coverage_histograms, min_sv_size, ind_id):
                     dir_list = [c[1] for c in comb]
                     if db1.bp_1.position - min_sv_size < db2.bp_1.position < db1.bp_2.position < db2.bp_2.position + min_sv_size:
                         len1, len2 = (db1.bp_2.position - db2.bp_1.position), (db2.bp_2.position - db1.bp_1.position)
-                        if len1/len2 > LEN_DIFF_RAT and abs(len2 - len1) < LEN_DIFF_THR:
+                        if len2 != 0 and len1/len2 > LEN_DIFF_RAT and abs(len2 - len1) < LEN_DIFF_THR:
                             sv_type = (db1.bp_1.position, db2.bp_1.position, db1.bp_2.position, db2.bp_2.position)
                             for cl in cl_list:
                                 for db in cl:
